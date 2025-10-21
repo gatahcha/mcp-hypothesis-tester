@@ -1,0 +1,58 @@
+{
+  "name": "mcp-hypothesis-tester",
+  "description": "MCP server for hypothesis testing and statistical analysis",
+  "version": "1.0.0",
+  "python_version": "3.13",
+  "dependencies": [
+    "fastmcp>=2.12.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "statsmodels>=0.14.0"
+  ],
+  "scripts": {
+    "start": "python main.py",
+    "test": "python -m pytest tests/",
+    "dev": "python main.py --dev"
+  },
+  "tools": [
+    {
+      "name": "statistical_test",
+      "description": "Perform various statistical hypothesis tests",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "test_type": {
+            "type": "string",
+            "enum": ["t_test", "chi_square", "anova", "mann_whitney", "wilcoxon"]
+          },
+          "data": {
+            "type": "array",
+            "items": {"type": "number"}
+          },
+          "alpha": {
+            "type": "number",
+            "default": 0.05
+          }
+        },
+        "required": ["test_type", "data"]
+      }
+    },
+    {
+      "name": "descriptive_stats",
+      "description": "Calculate descriptive statistics for a dataset",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {"type": "number"}
+          }
+        },
+        "required": ["data"]
+      }
+    }
+  ]
+}
