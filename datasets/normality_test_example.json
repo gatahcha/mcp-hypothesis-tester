@@ -1,0 +1,89 @@
+{
+  "dataset_info": {
+    "name": "normality_check_example",
+    "description": "Sample data for testing normality assumption",
+    "case_reference": "Assumption checking examples",
+    "business_context": "Before running parametric tests, check if data is normally distributed",
+    "test_recommended": "shapiro_wilk"
+  },
+  "hypothesis": {
+    "null": "H\u2080: Data follows normal distribution",
+    "alternative": "H\u2081: Data does not follow normal distribution",
+    "alpha": 0.05,
+    "test_type": "normality test"
+  },
+  "data": {
+    "format": "univariate_continuous",
+    "sample_size": 50,
+    "units": "arbitrary",
+    "measurement": "test_scores",
+    "values": [
+      92.53778356285996,
+      100.87961072866732,
+      108.79096406043944,
+      127.77931737582634,
+      95.30233543773608,
+      86.67352413246326,
+      66.29602957896111,
+      97.76543840721595,
+      79.65400929627089,
+      76.4168221703629,
+      95.70874209464898,
+      116.12119129668886,
+      82.05495220367132,
+      76.72964614319862,
+      111.19402896746908,
+      96.79573863076985,
+      71.70475411399269,
+      93.61366066175123,
+      97.08325930574264,
+      111.113835332629,
+      127.22865554202684,
+      105.0823745423393,
+      105.06668511961631,
+      114.73876378924543,
+      104.52056945369293,
+      100.36929201547994,
+      128.02044992189073,
+      113.68873768834288,
+      97.60252168511136,
+      116.00344587059135,
+      98.62945792864197,
+      74.10148475003714,
+      95.28998672437093,
+      94.94729195266362,
+      94.22845824016204,
+      92.00478173299453,
+      114.41341508374182,
+      123.83008093901373,
+      107.57723546779924,
+      101.87140361456716,
+      103.97098292163918,
+      90.68995190735275,
+      122.35334491439362,
+      105.5154327293634,
+      106.68411864327891,
+      93.2455499155994,
+      83.60378297329018,
+      85.22774615122296,
+      124.02806554371237,
+      91.2502887364521
+    ]
+  },
+  "statistical_properties": {
+    "sample_mean": 100,
+    "sample_std": 15,
+    "expected_distribution": "normal"
+  },
+  "expected_result": {
+    "decision": "likely_fail_to_reject_h0",
+    "interpretation": "Data appears normally distributed - safe to use parametric tests"
+  },
+  "business_interpretation": {
+    "summary": "Data meets normality assumption - can proceed with t-tests or ANOVA",
+    "recommendation": [
+      "Use parametric tests (more powerful)",
+      "If normality violated, use non-parametric alternatives"
+    ]
+  }
+}

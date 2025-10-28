@@ -1,0 +1,110 @@
+{
+  "dataset_info": {
+    "name": "coffee_machine_ratings",
+    "description": "Customer ratings for old vs new espresso machine",
+    "case_reference": "Coffee shop example from documentation",
+    "business_context": "Coffee shop wants to know if new machine makes better coffee",
+    "test_recommended": "two_sample_t_test"
+  },
+  "hypothesis": {
+    "null": "H\u2080: \u03bc_old = \u03bc_new (no difference in ratings)",
+    "alternative": "H\u2081: \u03bc_old \u2260 \u03bc_new (ratings differ)",
+    "alpha": 0.05,
+    "test_type": "two-tailed"
+  },
+  "data": {
+    "format": "two_independent_groups",
+    "sample_sizes": {
+      "old": 30,
+      "new": 30
+    },
+    "units": "rating (1-10 scale)",
+    "measurement": "customer_satisfaction",
+    "groups": {
+      "old_machine": [
+        5.84974520497376,
+        6.95633480558326,
+        5.9044935623830135,
+        6.386136827986295,
+        7.879001789071413,
+        6.560162339449666,
+        6.833075422341429,
+        8.314986850326113,
+        7.258711644009647,
+        6.899654795502165,
+        8.511634937634751,
+        8.313210859219245,
+        7.425744472440404,
+        8.159518848481822,
+        7.073760111499963,
+        8.894943618434464,
+        6.554198772635803,
+        7.494541035988062,
+        7.705184773578175,
+        6.363249966260923,
+        6.234045080911919,
+        5.4578644934778335,
+        8.708807432864392,
+        6.169166060195833,
+        6.135534124381518,
+        6.9194198501395565,
+        10.122187529520378,
+        8.645326794425513,
+        5.995757497655013,
+        6.273600498627646
+      ],
+      "new_machine": [
+        8.691115352913139,
+        5.760107625424655,
+        8.001943232914774,
+        9.797415530555664,
+        7.194586419490801,
+        9.522178003609543,
+        8.525460948862541,
+        8.675601593164092,
+        9.2019717332245,
+        6.684019414686857,
+        6.400427051631933,
+        8.337929490240414,
+        5.1305714708143775,
+        8.495689795933414,
+        8.589556032001255,
+        8.253837579240175,
+        8.785694329957604,
+        8.401795649696663,
+        8.366496856948748,
+        7.021734297756803,
+        7.347023942459555,
+        6.977060633313383,
+        7.741075246567499,
+        7.362311956972463,
+        7.55046174140431,
+        6.999897952394237,
+        9.234215513831444,
+        4.74189721950855,
+        7.935756099520839,
+        8.272167284959767
+      ]
+    }
+  },
+  "statistical_properties": {
+    "old_mean": 7.2,
+    "new_mean": 7.8,
+    "difference": 0.6,
+    "expected_distribution": "approximately_normal"
+  },
+  "expected_result": {
+    "p_value_approx": 0.03,
+    "decision": "reject_h0",
+    "interpretation": "New machine ratings (7.8) significantly higher than old (7.2), p\u22480.03"
+  },
+  "business_interpretation": {
+    "summary": "New espresso machine makes significantly better coffee according to customers",
+    "recommendation": [
+      "Keep the new machine",
+      "Consider upgrading other locations",
+      "Use in marketing ('Improved coffee quality')"
+    ],
+    "confidence": "Strong evidence (only 3% chance this is random)"
+  }
+}

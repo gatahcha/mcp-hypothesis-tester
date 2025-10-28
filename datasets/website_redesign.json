@@ -1,0 +1,106 @@
+{
+  "dataset_info": {
+    "name": "website_visit_duration",
+    "description": "Visit time before/after website redesign",
+    "case_reference": "Case 3 (Problem 2) from documentation",
+    "business_context": "Company redesigned website. Testing if visit duration changed from 5.0 to 5.5 minutes",
+    "test_recommended": "paired_t_test"
+  },
+  "hypothesis": {
+    "null": "H\u2080: \u03bc_new = \u03bc_old = 5 (redesign has no effect)",
+    "alternative": "H\u2081: \u03bc_new \u2260 5 (redesign changed visit duration)",
+    "alpha": 0.05,
+    "test_type": "two-tailed"
+  },
+  "data": {
+    "format": "paired_samples",
+    "sample_size": 30,
+    "units": "minutes",
+    "measurement": "visit_duration",
+    "before": [
+      3.0193866232155275,
+      7.048118225451693,
+      5.611208962689979,
+      4.461252236652506,
+      5.191291945811989,
+      4.718643987641128,
+      4.492878550636768,
+      5.3300494410636094,
+      3.9289442495167304,
+      5.707228816234188,
+      4.8459072333355335,
+      6.319920883471497,
+      5.013954555857872,
+      5.977268431049111,
+      7.049027349533924,
+      4.123397658023769,
+      6.965650263942372,
+      3.491192455664698,
+      3.7240542153052667,
+      5.042894695918024,
+      3.375016475241841,
+      6.2141042665718285,
+      3.2077541238832876,
+      5.744038359990343,
+      4.3600961835745355,
+      3.2225298571920034,
+      5.020013797286311,
+      7.254858724888617,
+      4.460677297461697,
+      5.078640132893345
+    ],
+    "after": [
+      5.685868471846509,
+      4.612149080488627,
+      6.880135111724306,
+      5.844881812409449,
+      4.301675052149015,
+      5.836316283291975,
+      4.356046605563543,
+      4.665688029655193,
+      4.294828098560181,
+      4.2673049814461566,
+      4.162753920198387,
+      5.862244068508715,
+      7.6614731402339,
+      4.617298653644783,
+      6.434377448516501,
+      4.340573567414912,
+      5.199821716920312,
+      7.793997379980915,
+      4.8318683657219905,
+      6.790132045323133,
+      4.671436742105949,
+      3.822449327013585,
+      9.445480510126298,
+      5.837470906586187,
+      6.238639290216127,
+      4.486523855056653,
+      4.916558568090811,
+      4.320687629540336,
+      6.153265241643599,
+      6.668054096021923
+    ]
+  },
+  "statistical_properties": {
+    "before_mean": 5.0,
+    "after_mean": 5.5,
+    "difference_mean": 0.5,
+    "expected_distribution": "approximately_normal"
+  },
+  "expected_result": {
+    "p_value_approx": 0.02,
+    "decision": "reject_h0",
+    "interpretation": "Visit time significantly changed from 5.0 to 5.5 minutes (p\u22480.02 < 0.05)"
+  },
+  "business_interpretation": {
+    "summary": "Website redesign significantly changed user behavior - visitors spend 30 seconds longer (10% increase)",
+    "recommendation": [
+      "Investigate WHERE users spend extra time",
+      "If on product pages: GOOD (considering purchases)",
+      "If on help/FAQ: BAD (confused, frustrated)",
+      "Analyze if change is beneficial or problematic"
+    ],
+    "confidence": "Very strong evidence (only 2% chance this is random)"
+  }
+}

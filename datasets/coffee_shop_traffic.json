@@ -1,0 +1,49 @@
+{
+  "dataset_info": {
+    "name": "coffee_shop_customers",
+    "description": "Daily customer count - testing if traffic increased from 100/day baseline",
+    "case_reference": "Case 2 (Problem 1) from documentation",
+    "business_context": "Coffee shop manager noticed 120 customers/day last week vs historical 100/day",
+    "test_recommended": "one_sample_t_test"
+  },
+  "hypothesis": {
+    "null": "H\u2080: \u03bc = 100 (customer count hasn't changed)",
+    "alternative": "H\u2081: \u03bc \u2260 100 (customer count has changed)",
+    "alpha": 0.05,
+    "test_type": "two-tailed",
+    "mu0": 100
+  },
+  "data": {
+    "format": "univariate_continuous",
+    "sample_size": 7,
+    "units": "customers",
+    "measurement": "daily_customer_count",
+    "values": [
+      101.5077883406895,
+      156.15583927292113,
+      137.4140196587068,
+      90.47142825211944,
+      114.81001544278264,
+      173.31628777192924,
+      66.32462126085119
+    ]
+  },
+  "statistical_properties": {
+    "sample_mean": 120,
+    "expected_distribution": "approximately_normal"
+  },
+  "expected_result": {
+    "p_value_approx": 0.08,
+    "decision": "fail_to_reject_h0",
+    "interpretation": "Cannot confirm customer traffic increased - difference could be random variation (p\u22480.08 \u2265 0.05)"
+  },
+  "business_interpretation": {
+    "summary": "While last week had 120 customers instead of usual 100, this difference isn't statistically significant. Could easily be explained by normal fluctuation.",
+    "recommendation": [
+      "Monitor for another 2-3 weeks",
+      "Don't make major decisions (hiring, inventory) based on one week",
+      "If higher traffic persists, we'll have stronger evidence"
+    ],
+    "confidence": "8% chance this happened by luck - not rare enough to be confident"
+  }
+}

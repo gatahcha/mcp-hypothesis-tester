@@ -13,9 +13,9 @@
     "statsmodels>=0.14.0"
   ],
   "scripts": {
-    "start": "python main.py",
+    "start": "python -m src.mcp_server",
     "test": "python -m pytest tests/",
-    "dev": "python main.py --dev"
+    "dev": "python -m src.mcp_server"
   },
   "tools": [
     {

@@ -1,0 +1,91 @@
+{
+  "dataset_info": {
+    "name": "store_sales_daily",
+    "description": "Daily sales for store - testing if Q1 2024 differs from historical $5,000 average",
+    "case_reference": "Case 1 from hypothesis-tester-for-megginners.md",
+    "business_context": "Store has historical average of $5,000/day. Current quarter shows $5,150/day. Is this real growth or luck?",
+    "test_recommended": "one_sample_t_test"
+  },
+  "hypothesis": {
+    "null": "H\u2080: \u03bc = 5000 (sales haven't changed from baseline)",
+    "alternative": "H\u2081: \u03bc \u2260 5000 (sales have genuinely changed)",
+    "alpha": 0.05,
+    "test_type": "two-tailed",
+    "mu0": 5000
+  },
+  "data": {
+    "format": "univariate_continuous",
+    "sample_size": 45,
+    "units": "USD (dollars)",
+    "measurement": "daily_sales",
+    "values": [
+      5522.02347052732,
+      5190.689319737189,
+      5600.802473728439,
+      6057.5588730086465,
+      5140.654039727,
+      5140.662606583437,
+      6086.875352834775,
+      5663.286487573798,
+      5017.862649091127,
+      5545.946029034213,
+      5021.023054391682,
+      5019.816612373512,
+      5389.092978563596,
+      4264.479309932474,
+      4362.767526576179,
+      4969.4324010773435,
+      4734.3370570296565,
+      5426.8115958697135,
+      4789.025768058003,
+      4525.890758548102,
+      6027.617205274072,
+      5145.025228639118,
+      5298.0726249795625,
+      4519.397179432199,
+      4978.775195665876,
+      5320.715978648654,
+      4662.243366151227,
+      5458.876795317772,
+      4949.420620880224,
+      5110.629255130973,
+      4948.863374993282,
+      6229.361891633664,
+      5255.793250499385,
+      4710.918603727383,
+      5692.043188761762,
+      4625.795335012346,
+      5371.821964376463,
+      4240.272896099013,
+      4569.7836666508065,
+      5365.5590881395,
+      5648.170798154981,
+      5352.25676829839,
+      5202.490443583743,
+      5105.7191099461,
+      4491.337805737304
+    ]
+  },
+  "statistical_properties": {
+    "sample_mean": 5150,
+    "sample_std": 480,
+    "expected_distribution": "approximately_normal"
+  },
+  "expected_result": {
+    "test_statistic_approx": 2.096,
+    "p_value_approx": 0.042,
+    "decision": "reject_h0",
+    "cohens_d_approx": 0.31,
+    "interpretation": "Sales of $5,150 are statistically significantly different from $5,000 baseline (p\u22480.042 < 0.05)"
+  },
+  "business_interpretation": {
+    "summary": "Your current quarter sales of $5,150 are significantly higher than the historical $5,000 baseline. This is NOT just random noise\u2014something real happened!",
+    "recommendation": [
+      "Investigate what caused this improvement (marketing, better service, new customers)",
+      "Ensure practices that led to increase are maintained",
+      "Update budget forecasts to reflect new higher baseline",
+      "Monitor next quarter to confirm trend continues"
+    ],
+    "confidence": "We are 95% confident this increase is real (only ~4.2% chance it's luck)"
+  }
+}
